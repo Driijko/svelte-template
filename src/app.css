@@ -42,9 +42,121 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+dialog {
+  margin: 0;
+  padding: 0;
+  left: initial;
+}
+
+/* INTERFACE RESET //////////////////////// */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:focus, button:focus, input:focus {
+  outline: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+input {
+  font-family: inherit;
+}
+
+/* GENERAL ////////////////////////////////////////////////////////////////// */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+  scroll-behavior: smooth; 
+  overscroll-behavior: contain;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+p a {
+  text-decoration: underline;
+  padding: 0 0.3rem;
+}
+
+button, label, input {
+  cursor: pointer;
+}
+
+/* This is to make these elements at least
+the minimum recommended size on mobile. 
+Recommended interface size is 40px - 70px, 
+with 50-60 being ideal. */
+a, button, input {
+  min-width: 40px;
+  min-height: 40px;
+}
+
+/* PREVENT OVERSIZED IMAGES */
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+svg {
+  width: 1rem;
+}
+
+/* CSS TOOLS ///////////////////////////////////////////////////////////////// */
+.hidden-submit {
+  visibility: hidden;
+  position: absolute;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-gap {
+  gap: 0.3rem;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+}
+
+@media only screen and (orientation: landscape) {
+  .portrait {
+    display: none;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  .landscape {
+    display: none;
+  }
+}
 
 /* FONT-SIZE AND FAMILY /////////////////////////////////////////////////////// */
-
 html {
   font-size: 5vw;
   font-family: Arial, Helvetica, sans-serif;
@@ -54,4 +166,20 @@ html {
   html {
     font-size: calc(16px + 0.67vw);
   }
+}
+
+/* COLORS //////////////////////////////////////////////////////////////////// */
+:root {
+  --color1: black;
+  --color1-1: hsl(0, 0%, 15%);
+  --color2: white;
+  --color2-1: hsla(0, 0%, 100%, 0.6);
+  --color2-2: hsla(0, 0%, 80%, 1);
+  --color3: magenta;
+  color: var(--color2);
+  background-color: var(--color1);
+}
+
+svg path {
+  fill: currentColor;
 }
