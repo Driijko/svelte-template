@@ -1,12 +1,18 @@
+<!-- SCRIPTS ////////////////////////////////////////////////////////////////// -->
+<script>
+  export let openSiteMenuModal;
+  export let openLogInModal;
+</script>
+
 <!-- MARKUP ///////////////////////////////////////////////////////////////// -->
 <header>
 
-  <div class="area1">
+  <div id="site-header-area1">
     <h1>Main Header</h1>
     <p>Doing the unexpected...over and over</p>
   </div>
 
-  <nav class="area2">
+  <nav id="site-header-area2">
     <ul>
       <li>
         <a href="" >Home</a>
@@ -29,7 +35,7 @@
     </ul>
   </nav>
 
-  <ul class="area3">
+  <ul id="site-header-area3">
     <li>
       <form>
         <label class="center icon-gap" for="search">
@@ -59,7 +65,7 @@
       </button>
     </li>
     <li>
-      <button class="center log-in-modal-opener icon-gap" type="button">
+      <button on:click={openLogInModal} class="center icon-gap" type="button">
         <svg class="user-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z"/>
         </svg>
@@ -68,8 +74,8 @@
     </li>
   </ul>
 
-  <div class="area4">
-    <button class="site-menu-modal-opener center" type="button">
+  <div id="site-header-area4">
+    <button on:click={openSiteMenuModal} class="center" type="button">
       <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
         <title>Menu</title>
         <path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/>
@@ -93,7 +99,7 @@ header > * {
 }
 
 /* CONFIGURATION 1 ////////////////////////// */
-.area1 {
+#site-header-area1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,15 +110,15 @@ header > * {
   padding-left: 1rem;
 }
 
-.area1 h1 {
+#site-header-area1 h1 {
   font-size: 2rem;
 }
 
-.area1 p, .area2, .area3 {
+#site-header-area1 p, #site-header-area2, #site-header-area3 {
   display: none;
 }
 
-.area4 {
+#site-header-area4 {
   right: 0%;
   height: 100%;
   width: 5rem;
@@ -121,13 +127,13 @@ header > * {
   align-items: center;
 }
 
-.area4 .menu-icon {
+#site-header-area4 .menu-icon {
   width: 2rem;
 }
 
 /* CONFIGURATION 2 //////////////////////////////////// */
 @media only screen and (min-width: 380px) {
-  .area1 p {
+  #site-header-area1 p {
     display: block;
     font-style: italic;
     font-size: 0.9rem;
@@ -137,7 +143,7 @@ header > * {
 /* CONFIGURATION 3 /////////////////////// */
 @media only screen and (min-width: 892px) {
 
-  .area1 {
+  #site-header-area1 {
     width: 100%;
     height: initial;
     top: 12%;
@@ -145,20 +151,20 @@ header > * {
     gap: 0.5rem;
   }
   
-  .area2 {
+  #site-header-area2 {
     display: block;
     bottom: 0%;
     width: 100%;
   }
   
-  .area2 ul {
+  #site-header-area2 ul {
     gap: 3rem;
     display: flex;
     justify-content: space-evenly;
     padding: 0 5rem;
   }
 
-  .area3 {
+  #site-header-area3 {
     display: flex;
     font-size: 0.85rem;
     gap: 1rem;
@@ -166,15 +172,15 @@ header > * {
     top: 10%;
   }
 
-  .area3 form {
+  #site-header-area3 form {
     padding-right: 0.5rem;
   }
   
-  .area3 .search-icon {
+  #site-header-area3 .search-icon {
     width: 1.1rem;
   }
   
-  .area3 input[type="search"] {
+  #site-header-area3 input[type="search"] {
     transform: scale(0);
     border: none;
     transform-origin: 100% 50%;
@@ -183,34 +189,34 @@ header > * {
     margin-right: 0.5rem;
   }
   
-  .area3 input[type="search"]:focus {
+  #site-header-area3 input[type="search"]:focus {
     transform: scale(1);
     border: 0.1rem solid black;
     border-radius: 0.2rem;
   }
   
-  .area3 input {
+  #site-header-area3 input {
     font-size: 1.2rem;
     font-weight: 700;
   }
   
-  .area3 form button[type="submit"] {
+  #site-header-area3 form button[type="submit"] {
     position: absolute;
   }
   
-  .area3 .checkout-icon {
+  #site-header-area3 .checkout-icon {
     width: 0.9rem;
   }
   
-  .area3 .follow-icon {
+  #site-header-area3 .follow-icon {
     width: 1rem;
   }
   
-  .area3 .user-icon {
+  #site-header-area3 .user-icon {
     width: 1.1rem;
   }
 
-  .area4 {
+  #site-header-area4 {
     display: none;
   }
 }
@@ -218,7 +224,7 @@ header > * {
 /* CONFIGURATION 4 /////////////////////// */
 @media only screen and (min-width: 1250px) {
 
-  .area1 {
+  #site-header-area1 {
     top: 0%;
     width: 35%;
     height: 100%;
@@ -227,14 +233,14 @@ header > * {
     padding-left: 1rem;
   }
   
-  .area2 {
+  #site-header-area2 {
     display: block;
     width: initial;
     right: 3%;
     bottom: 0%;
   }
   
-  .area2 ul {
+  #site-header-area2 ul {
     padding: 0;
   }
 }

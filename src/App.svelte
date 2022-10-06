@@ -1,8 +1,8 @@
 <!-- SCRIPT //////////////////////////////////////////////////////////////////// -->
 <script>
-  import SiteHeader from "./lib/SiteHeader.svelte";
+  import Page from "./lib/Page.svelte";
   import Tutorial1 from "./lib/Tutorial1.svelte";
 </script>
 
 <!-- MARKUP //////////////////////////////////////////////////////////////////// -->
-<SiteHeader />
+<Page />
