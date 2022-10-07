@@ -13,6 +13,7 @@ export default function viewport() {
       const timerId = setTimeout(()=> {
         defineViewport();
         resizeReady = false;
+        clearTimeout(timerId);
       }, 2000);
     };
   });

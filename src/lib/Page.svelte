@@ -38,7 +38,7 @@
 </script>
 
 <!-- MARKUP ///////////////////////////////////////////////////////// -->
-<LoadingScreen />
+<!-- <LoadingScreen /> -->
 
 <SiteHeader 
   openSiteMenuModal={()=> openModal("siteMenu")} 
