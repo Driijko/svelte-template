@@ -1,5 +1,10 @@
 <!-- SCRIPTS ///////////////////////////////////////////////////// -->
 <script>
+  // IMPORT SCRIPTS -------------------------------------------------
+  import viewport from "./scripts/viewport.js";
+
+  // IMPORT COMPONENTS -----------------------------------------------
+  import LoadingScreen from "./LoadingScreen.svelte";
   import SiteHeader from "./SiteHeader.svelte";
   import SiteFooter from "./SiteFooter.svelte";
   import SiteMenuModal from "./SiteMenuModal.svelte";
@@ -8,6 +13,10 @@
   import ChatAside from "./ChatAside.svelte";
   import ChatModal from "./ChatModal.svelte";
 
+  // RUN SCRIPTS -----------------------------------------------------
+  viewport();
+
+  // LOCAL STATE -----------------------------------------------------
   let modalsOpen = {
     siteMenu: false,
     logIn: false,
@@ -15,6 +24,7 @@
     chat: false,
   }
 
+  // EVENT HANDLERS ---------------------------------------------------
   function openModal(modal) {
     modalsOpen[modal] = true;
     modalsOpen = modalsOpen;
@@ -28,6 +38,8 @@
 </script>
 
 <!-- MARKUP ///////////////////////////////////////////////////////// -->
+<LoadingScreen />
+
 <SiteHeader 
   openSiteMenuModal={()=> openModal("siteMenu")} 
   openLogInModal={()=> openModal("logIn")}

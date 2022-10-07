@@ -1,0 +1,17 @@
+<!-- SCRIPTS ///////////////////////////////////////////////////////////// -->
+<script>
+  $: height = `${window.innerHeight}px`;
+</script>
+
+<!-- MARKUP /////////////////////////////////////////////////////////////// -->
+<div ></div>
+
+<!-- STYLE //////////////////////////////////////////////////////////////// -->
+<style>
+  div {
+    position: fixed;
+    border: 4px solid red;
+    width: 100vw;
+    height: var(--vph);
+  }
+</style>
