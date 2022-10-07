@@ -1,33 +1,31 @@
 <!-- SCRIPTS ///////////////////////////////////////////////////////////// -->
 <script>
-  const emojis = {
-    apple: "🍎",
-    banana: "🍌",
-    carrot: "🥕",
-    doughnut: "🍩",
-    egg: "🥚",
-	}
 
-  export let name;
-
-  $: emoji = emojis[name];
 </script>
 
 <!-- MARKUP //////////////////////////////////////////////////////////////// -->
-<p>
-  <span>The emoji for {name} is {emoji}</span>
-</p>
+<button on:click>
+  Click Me
+</button>
 
 <!-- STYLE /////////////////////////////////////////////////////////////// -->
 <style>
-  p {
-    margin: 0.8rem 0;
+  button {
+    background: #E2E8F0;
+    color: #64748B;
+    border: unset;
+    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
   }
-  span {
-    display: inline-block;
-    padding: 0.2rem 1rem 0.3rem;
-    text-align: center;
-    border-radius: 0.2rem;
-    background-color: #FFDFD3;
+
+  button:hover {
+    background: #CBD5E1;
+    color: #475569;
+  }
+
+  button:focus {
+    background: #94A3B8;
+    color: #F1F5F9;
   }
 </style>

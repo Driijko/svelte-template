@@ -1,16 +1,42 @@
 <script>
-  let m = {x: 0, y: 0};
-  function handleMouseMove(event) {
-    m.x = event.clientX;
-    m.y = event.clientY;
+  import Tutorial2 from "./Tutorial2.svelte";
+  let todos = [
+    {done: false, text: "finish Svelte tutorial"},
+    {done: false, text: "build an app"},
+    {done: false, text: "world domination"},
+  ];
+
+  function add() {
+    todos = todos.concat({done:false, text: ""});
   }
+
+  function clear() {
+    todos = todos.filter(t => !t.done);
+  }
+
+  $: remaining = todos.filter(t => !t.done).length;
+
 </script>
 
 <!-- MARKUP //////////////////////////////////////////////////////////////// -->
 <div id="main-container">
-  <div on:mousemove={handleMouseMove}>
-    The mouse position is {m.x} x {m.y}
-  </div>
+
+  <h1>Todos</h1>
+
+  {#each todos as todo}
+    <div class:done={todo.done}>
+      <input type=checkbox bind:checked={todo.done} />
+      <input placeholder="What needs to be done?" bind:value={todo.text} />
+    </div>
+  {/each}
+
+  <p>
+    {remaining} remaining
+  </p>
+
+  <button on:click={add}>Add new</button>
+  <button on:click={clear}>Clear completed</button>
+
 </div>
 
 <!-- STYLE /////////////////////////////////////////////////////////////// -->
@@ -19,8 +45,7 @@
     padding: 1rem;
     height: 100vh;
   }
-  #main-container > div {
-    width: 100%;
-    height: 100%;
+  .done {
+    opacity: 0.4;
   }
 </style>

@@ -75,6 +75,10 @@ input {
   box-sizing: border-box;
 }
 
+html {
+  scrollbar-width: none;
+}
+
 body {
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;  
