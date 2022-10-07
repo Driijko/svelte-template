@@ -5,11 +5,14 @@
   import SiteMenuModal from "./SiteMenuModal.svelte";
   import LogInModal from "./LogInModal.svelte";
   import SocialMediaModal from "./SocialMediaModal.svelte";
+  import ChatAside from "./ChatAside.svelte";
+  import ChatModal from "./ChatModal.svelte";
 
   let modalsOpen = {
     siteMenu: false,
     logIn: false,
     socialMedia: false,
+    chat: false,
   }
 
   function openModal(modal) {
@@ -33,6 +36,8 @@
 
 <SiteFooter />
 
+<ChatAside openChatModal={()=> openModal("chat")} />
+
 <SiteMenuModal 
   openLogInModal={()=> openModal("logIn")}
   closeModal={()=> closeModal("siteMenu")} 
@@ -47,4 +52,9 @@
 <SocialMediaModal
   closeModal={()=> closeModal("socialMedia")}
   open={modalsOpen.socialMedia}
- />
+/>
+
+<ChatModal
+  open={modalsOpen.chat}
+  closeModal={()=> closeModal("chat")}
+/>
