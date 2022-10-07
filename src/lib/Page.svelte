@@ -34,7 +34,7 @@
   openSocialMediaModal={()=> openModal("socialMedia")}
 />
 
-<SiteFooter />
+<SiteFooter openChatModal={()=> openModal("chat")} />
 
 <ChatAside openChatModal={()=> openModal("chat")} />
 
