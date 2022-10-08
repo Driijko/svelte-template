@@ -225,7 +225,7 @@ html {
   --color2-2: hsla(0, 0%, 80%, 1);
   --color3: magenta;
   color: var(--color2);
-  background-color: var(--color1);
+  background-color: var(--color2);
 }
 
 svg path {
