@@ -1,7 +1,7 @@
 <!-- SCRIPTS ///////////////////////////////////////////////////// -->
 <script>
   // IMPORT SCRIPTS -------------------------------------------------
-  import viewport from "./scripts/viewport.js";
+
 
   // IMPORT COMPONENTS -----------------------------------------------
   import LoadingScreen from "./LoadingScreen.svelte";
@@ -13,8 +13,6 @@
   import ChatAside from "./ChatAside.svelte";
   import ChatModal from "./ChatModal.svelte";
 
-  // RUN SCRIPTS -----------------------------------------------------
-  viewport();
 
   // LOCAL STATE -----------------------------------------------------
   let modalsOpen = {

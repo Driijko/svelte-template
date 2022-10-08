@@ -2,24 +2,22 @@
 <script>
   // IMPORT SCRIPTS ---------------------------------------------------------
   import { onMount } from "svelte";
+  import page from "./scripts/page.js";
+
+  // PROPS ------------------------------------------------------------
+  export let pageExitDuration;
 
   // ELEMENT/COMPONENT REFERENCES -------------------------------------------
   let loadingScreen;
 
-  // EVENT HANDLERS --------------------------------------------------------
-  function handleLoad() {
-    loadingScreen.style.opacity = 0;
-    const timerId = setTimeout(()=> {
-      loadingScreen.style.display = "none";
-      clearTimeout(timerId);
-    }, 3000);
-  };
+  // RUN SCRIPTS ---------------------------------------------------------
+  const pageExit = page();
 
   // LIFECYCYLE ---------------------------------------------------------
   onMount(()=> {
-    window.addEventListener("load", handleLoad);
+    window.addEventListener("load", ()=> pageExit(loadingScreen, "splash", pageExitDuration));
     return ()=> {
-      window.removeEventListener("load", handleLoad);
+      window.removeEventListener("load", ()=> pageExit(loadingScreen, "splash", pageExitDuration));
     };
   });
 
@@ -42,7 +40,7 @@
     width: 100vw;
     height: var(--vph);
     background-color: var(--color2);
-    transition: opacity 3s ease-out;
+    transition: opacity var(--page-exit-duration) ease-out;
     z-index: 1;
   }
   @keyframes rotate1 {

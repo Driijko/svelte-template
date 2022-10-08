@@ -2,10 +2,8 @@
 <script>
   // IMPORT SCRIPTS -------------------------------------------
   import { onMount } from "svelte";
-  import viewport from "./scripts/viewport.js";
 
   // RUN SCRIPTS ----------------------------------------------
-  viewport();
 
   // LIFECYCLE ----------------------------------------------
   onMount(()=> {
