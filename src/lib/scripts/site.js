@@ -1,11 +1,11 @@
 // MAIN FUNCTION ///////////////////////////////////////////////////////
-export default function site(pageExitDuration) {
-  viewport();
+export default function site(pageExitDuration, restart) {
+  viewport(restart);
   definePageExitDuration(pageExitDuration);
 }
 
 // VIEWPORT ---------------------------------------------------------------
-function viewport() {
+function viewport(restart) {
   function defineViewport() {
     document.documentElement.style.setProperty("--vph", `${window.innerHeight}px`);
   };
@@ -19,6 +19,7 @@ function viewport() {
       const timerId = setTimeout(()=> {
         defineViewport();
         resizeReady = false;
+        restart();
         clearTimeout(timerId);
       }, 2000);
     };
